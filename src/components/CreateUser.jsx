@@ -54,7 +54,7 @@ export default function CreateUser() {
         role: "user",
       }),
     });
-    if (response.ok) {
+    if (response.ok && response.data) {
       response = await response.json();
       console.log(response.id, typeof response.id);
       if (typeof response.id === "number") {
@@ -77,7 +77,7 @@ export default function CreateUser() {
         password: loginData?.password,
       }),
     });
-    if (response.ok) {
+    if (response.ok && response.data) {
       response = await response.json();
       console.log("Login successful", response);
       if (typeof response.id === "number") {
@@ -86,7 +86,7 @@ export default function CreateUser() {
       }
       // Handle successful login
     } else {
-      alert("Login failed");
+      alert("Login failed. Please check your email and password.");
     }
   }
 

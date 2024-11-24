@@ -42,7 +42,11 @@ export default function YourMatches() {
               className="bg-white shadow-md rounded-lg overflow-hidden"
             >
               <img
-                src={match.image}
+                src={
+                  match.type === "lost"
+                    ? match.lostItem.image
+                    : match.foundItem.image
+                }
                 alt="Design Image"
                 className="w-full h-48 sm:h-64 md:h-72 lg:h-80 object-cover"
               />

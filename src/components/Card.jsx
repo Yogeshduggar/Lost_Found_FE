@@ -18,7 +18,7 @@ export default function Card({ lostItem, foundItem, id }) {
 
     await response.json();
 
-    window.location.reload();
+    window.location.reload("/admin");
   }
 
   async function handleRejected(e) {
@@ -36,7 +36,7 @@ export default function Card({ lostItem, foundItem, id }) {
 
     await response.json();
 
-    window.location.reload();
+    window.location.reload("/admin");
   }
   return (
     <div className="w-full h-full bg-white rounded-lg shadow-md ">

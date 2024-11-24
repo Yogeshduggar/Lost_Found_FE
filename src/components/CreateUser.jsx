@@ -54,11 +54,13 @@ export default function CreateUser() {
         role: "user",
       }),
     });
-    if (response.ok && response.data) {
+    if (response.ok) {
       response = await response.json();
-      console.log(response.id, typeof response.id);
-      if (typeof response.id === "number") {
+      if (response.id && typeof response.id === "number") {
         localStorage.setItem("userId", response.id);
+        window.location.reload();
+      } else {
+        alert("Username already exists");
       }
     } else {
       alert("Username or password wrong");
@@ -77,12 +79,14 @@ export default function CreateUser() {
         password: loginData?.password,
       }),
     });
-    if (response.ok && response.data) {
+    if (response.ok) {
       response = await response.json();
-      console.log("Login successful", response);
-      if (typeof response.id === "number") {
+      if (response.id && typeof response.id === "number") {
+        console.log("Login successful", response);
         localStorage.setItem("userId", response.id);
         window.location.reload();
+      } else {
+        alert("Login failed. Please check your email and password.");
       }
       // Handle successful login
     } else {

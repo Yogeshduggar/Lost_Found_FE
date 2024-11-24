@@ -46,7 +46,8 @@ export default function Card({ lostItem, foundItem, id }) {
         </h2>
         <img
           src={lostItem.image}
-          className="w-full h-100 object-cover rounded-lg mb-4"
+          className="w-full h-48 object-cover rounded-lg mb-4"
+          alt={lostItem.name}
         />
         <h2 className="text-lg font-bold mb-2">{lostItem.name}</h2>
         <p className="text-gray-700">{lostItem.description}</p>
@@ -56,7 +57,8 @@ export default function Card({ lostItem, foundItem, id }) {
         </h2>
         <img
           src={foundItem.image}
-          className="w-full h-100 object-cover rounded-lg mb-4"
+          className="w-full h-48 object-cover rounded-lg mb-4"
+          alt={foundItem.name}
         />
         <h2 className="text-lg font-bold mb-2">{foundItem.name}</h2>
         <p className="text-gray-700">{foundItem.description}</p>

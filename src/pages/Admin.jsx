@@ -29,10 +29,10 @@ export default function Admin() {
 
   return (
     <>
-      <section className="py-16 bg-gray-100 h-screen pb-20">
-        <div className="container mx-auto">
+      <section className="py-16 bg-gray-100 min-h-screen pb-20">
+        <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold mb-8 text-center">Admin page</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 pl-10 pr-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {allItems?.map((item) => (
               <Card
                 key={item?.id}

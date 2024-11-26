@@ -47,6 +47,7 @@ function UploadItem() {
       }
 
       const data = await response.json();
+      window.location.href = "/";
       console.log("Item uploaded successfully:", data);
     } catch (error) {
       console.error("Error uploading item:", error);
